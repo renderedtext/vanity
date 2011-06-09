@@ -147,7 +147,7 @@ module Vanity
         else
           value = Vanity.playground.experiment(name).choose.value
         end
- 
+
         if block
           content = capture(value, &block)
           block_called_from_erb?(block) ? concat(content) : content
@@ -159,7 +159,7 @@ module Vanity
       def vanity_js
         return if @_vanity_experiments.nil?
         javascript_tag do
-          render Vanity.template("vanity.js.erb")
+          render Vanity.template("layouts/vanity/vanity.js")
         end
       end
 

@@ -1,7 +1,7 @@
 <% unless @_vanity_experiments.empty? %>
   var httpRequest;
   <%
-    @_vanity_experiments.each do |name, alternative| 
+    @_vanity_experiments.each do |name, alternative|
   %>
     var params = "e=<%= name %>&a=<%= alternative.id %>&authenticity_token=" + encodeURIComponent("<%= form_authenticity_token %>");
     if (window.XMLHttpRequest) { // Mozilla, Safari, ...
